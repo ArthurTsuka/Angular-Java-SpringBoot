@@ -1,0 +1,30 @@
+<h1>Usuários</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>CPF</th>
+            <th>Nacionalidade</th>
+            <th>Telefone</th>
+            <th>Data de Nascimento</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.usuario_id}}</td>
+            <td>{{user.nome}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.cpf}}</td>
+            <td>{{user.nacionalidade}}</td>
+            <td>{{user.telefone}}</td>
+            <td>{{user.dataNascimento | date: 'dd/MM/yyyy'}}</td>
+            <td>
+                <button class="btn-update" [routerLink]="'/user/update/' + user.usuario_id">Update</button>
+                <button class="btn-delete" (click)="deleteUser(user.usuario_id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

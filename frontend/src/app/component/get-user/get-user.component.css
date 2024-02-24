@@ -1,0 +1,107 @@
+/* Estilo geral para manter a consistência visual */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilo para o botão */
+  .btn-new {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .btn-new:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilos para a tabela */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+.btn-delete {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-update {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px; /* Adiciona espaço entre os botões */
+  }
+  
+.btn-update:hover {
+    background-color: #0056b3;
+}
+  
+
+.btn-delete:hover {
+    background-color: darkred;
+}
+  
+  /* Adiciona um pouco de espaço e melhora a visualização em dispositivos menores */
+  @media screen and (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+  
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+  
+    tr { border: 1px solid #ccc; }
+  
+    td {
+      border: none;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      padding-left: 50%;
+      text-align: right;
+    }
+  
+    td:before {
+      position: absolute;
+      top: 12px;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      text-align: left;
+      font-weight: bold;
+    }
+  
+    td:nth-of-type(1):before { content: "Nome"; }
+    td:nth-of-type(2):before { content: "Email"; }
+    td:nth-of-type(3):before { content: "CPF"; }
+    
+  }
+  
