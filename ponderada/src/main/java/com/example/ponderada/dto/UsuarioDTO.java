@@ -1,22 +1,24 @@
 package com.example.ponderada.dto;
 
+import java.time.LocalDate;
+
 public class UsuarioDTO {
 
-
     private int usuario_id;
-
     private String nome;
-
     private String cpf;
-
     private String email;
-
     private String senha;
+    private String nacionalidade;
+    private String telefone;
+    private LocalDate dataNascimento;
 
+    // Construtor padrão
     public UsuarioDTO() {
         
     }
 
+    // Getters e Setters
     public int getUsuario_id() {
         return usuario_id;
     }
@@ -56,5 +58,28 @@ public class UsuarioDTO {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    
+
+    public String getNacionalidade() {
+        return nacionalidade;
+    }
+
+    public void setNacionalidade(String nacionalidade) {
+        this.nacionalidade = nacionalidade;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(LocalDate dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
 }
