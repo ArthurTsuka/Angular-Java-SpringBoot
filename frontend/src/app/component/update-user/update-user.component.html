@@ -3,7 +3,7 @@
     <div class="container">
         <div class="form-container">
             <h2 class="form-title">Atualizar Conta</h2>
-            <form [formGroup]="updateUserForm">
+            <form [formGroup]="updateUserForm" (ngSubmit)="updateUser()">
                 <div class="form-group">
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome" name="nome" required formControlName="nome">

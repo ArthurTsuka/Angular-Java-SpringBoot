@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-post-user',
   templateUrl: './post-user.component.html',
-  styleUrls: ['./post-user.component.css'] // Corrigido para styleUrls
+  styleUrls: ['./post-user.component.css']
 })
 export class PostUserComponent implements OnInit {
 

@@ -31,11 +31,11 @@ export class UpdateUserComponent implements OnInit {
   initializeForm(): void {
     this.updateUserForm = this.fb.group({
       nome: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email, Validators.pattern(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)]],
-      cpf: ['', [Validators.required, Validators.pattern(/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/)]],
+      email: ['', [Validators.required, Validators.email]],
+      cpf: ['', [Validators.required]],
       senha: ['', Validators.required],
       nacionalidade: ['', Validators.required],
-      telefone: ['', [Validators.required, Validators.pattern(/^\+?[1-9]\d{1,14}$/)]],
+      telefone: ['', [Validators.required]],
       dataNascimento: ['', Validators.required],
     });
   }
@@ -57,14 +57,17 @@ export class UpdateUserComponent implements OnInit {
 
   updateUser() {
     if (this.updateUserForm.valid) {
-      this.userService.updateUser(this.id, this.updateUserForm.value).subscribe((res) => {
-        console.log(res);
-        if (res.usuario_id != null) {
+      this.userService.updateUser(this.id, this.updateUserForm.value).subscribe({
+        next: (res) => {
+          console.log('Usuário atualizado com sucesso:', res);
           this.router.navigateByUrl("/user");
+        },
+        error: (error) => {
+          console.error('Erro ao atualizar usuário:', error);
         }
-      }, error => {
-        console.error("Erro ao atualizar usuário:", error);
       });
+    } else {
+      console.error('Formulário de atualização inválido');
     }
   }
 }

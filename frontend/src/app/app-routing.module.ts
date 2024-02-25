@@ -11,7 +11,7 @@ export const routes: Routes = [
     {path:'user', component: GetUserComponent},
     {path:'create', component: PostUserComponent},
     {path:'login', component: LoginComponent},
-    {path:'user/:id', component: UpdateUserComponent}
+    {path:'user/update/:id', component: UpdateUserComponent}
 
 
 
